@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Web Page</title>
+        <script>
+            function success(){
+                if(document.getElementById("txt").value===""){
+                    document.getElementById("button").disabled=true;
+                }else{
+                    document.getElementById("button").disabled=false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="txt" onkeyup="success()">
+        <button id="button" type="submit" disabled>Submit</button>
+    </body>
+</html>

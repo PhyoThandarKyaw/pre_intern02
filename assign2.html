@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Web Page</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", () =>{
+                    document.querySelector("#todolist").onsubmit = () => {
+                    const li=document.createElement("li");
+                    li.innerHTML=document.querySelector("#txt").value;
+                    document.querySelector("#list").append(li);
+                    document.querySelector("#txt").value="";
+                    document.querySelector("#button").disabled=true;                    
+                    return false;                    
+                };
+            });
+            function success(){
+                if(document.getElementById("txt").value===""){
+                    document.getElementById("button").disabled=true;
+                    
+                }else{
+                    document.getElementById("button").disabled=false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>To Do List</h3>
+        <ul id="list">
+
+        </ul>
+        <form id="todolist">
+        <input type="text" id="txt" onkeyup="success()" placeholder="Add todo-task">
+        <input id="button" type="submit" disabled value="Submit">
+        </form>
+    </body>
+</html>
